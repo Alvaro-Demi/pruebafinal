@@ -71,23 +71,22 @@ import { Router } from '@angular/router';
     </div>
   `,
   styles: [`
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-
     .form-container {
       max-width: 600px;
-      margin: 0 auto;
+      margin: 2rem auto;
       padding: 2rem;
-      background: white;
       border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      background: #e0e0e0;
+      box-shadow: 10px 10px 20px #bebebe,
+                 -10px -10px 20px #ffffff;
+      font-family: 'Poppins', sans-serif;
     }
 
     h2 {
-      font-family: 'Poppins', sans-serif;
       color: #1e3c72;
-      font-size: 2rem;
-      margin-bottom: 2rem;
       text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
       font-weight: 600;
     }
 
@@ -99,63 +98,59 @@ import { Router } from '@angular/router';
       display: block;
       margin-bottom: 0.5rem;
       color: #1e3c72;
-      font-family: 'Poppins', sans-serif;
       font-weight: 500;
-      font-size: 1.1rem;
     }
 
     input {
       width: 100%;
-      padding: 1rem;
-      border: 2px solid #e0e0e0;
+      padding: 0.8rem;
+      border: none;
       border-radius: 12px;
-      font-size: 1rem;
+      background: #f5f5f5;
+      box-shadow: inset 4px 4px 8px #bebebe,
+                 inset -4px -4px 8px #ffffff;
       font-family: 'Poppins', sans-serif;
-      transition: all 0.3s ease;
-      background: #f8f9fa;
+      font-size: 1rem;
+      color: #333;
+      box-sizing: border-box;
     }
 
     input:focus {
       outline: none;
-      border-color: #2a5298;
-      box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.1);
-      background: white;
+      box-shadow: inset 6px 6px 10px #bebebe,
+                 inset -6px -6px 10px #ffffff;
     }
 
-    input::placeholder {
-      color: #a0a0a0;
-    }
-
-    .form-actions {
+    .buttons {
       display: flex;
+      justify-content: space-between;
       gap: 1rem;
       margin-top: 2rem;
     }
 
     button {
-      flex: 1;
-      padding: 1rem;
+      flex: 0 1 45%;
+      padding: 0.8rem;
       border: none;
       border-radius: 12px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 500;
       cursor: pointer;
+      font-weight: 500;
       transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      font-size: 1rem;
     }
 
     .btn-submit {
       background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-      color: white;
+      box-shadow: 4px 4px 8px rgba(30, 60, 114, 0.3),
+                 -4px -4px 8px rgba(42, 82, 152, 0.3);
     }
 
     .btn-submit:hover:not(:disabled) {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(30, 60, 114, 0.2);
+      background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+      box-shadow: inset 4px 4px 8px rgba(30, 60, 114, 0.3),
+                  inset -4px -4px 8px rgba(42, 82, 152, 0.3);
     }
 
     .btn-submit:disabled {
@@ -166,48 +161,44 @@ import { Router } from '@angular/router';
 
     .btn-cancel {
       background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-      color: white;
+      box-shadow: 4px 4px 8px rgba(231, 76, 60, 0.3),
+                 -4px -4px 8px rgba(192, 57, 43, 0.3);
     }
 
     .btn-cancel:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(231, 76, 60, 0.2);
-    }
-
-    .icon {
-      font-size: 1.2rem;
+      background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+      box-shadow: inset 4px 4px 8px rgba(231, 76, 60, 0.3),
+                  inset -4px -4px 8px rgba(192, 57, 43, 0.3);
     }
 
     @media (max-width: 768px) {
       .form-container {
+        margin: 1rem;
         padding: 1.5rem;
-        margin: 0 1rem;
-      }
-
-      h2 {
-        font-size: 1.75rem;
-      }
-
-      .form-actions {
-        flex-direction: column;
-      }
-
-      button {
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .form-container {
-        padding: 1rem;
       }
 
       h2 {
         font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group {
+        margin-bottom: 1rem;
       }
 
       input {
-        padding: 0.8rem;
+        padding: 0.6rem;
+        font-size: 0.9rem;
+      }
+
+      .buttons {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      button {
+        width: 100%;
+        flex: 1;
       }
     }
   `]
