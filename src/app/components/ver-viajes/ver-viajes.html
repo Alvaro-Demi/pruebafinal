@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Mis Viajes</h2>
+  
+  <div *ngIf="viajes.length > 0" class="viajes-container">
+    <div *ngFor="let viaje of viajes; let i = index" class="viaje-card">
+      <h3>{{ viaje.origen }} → {{ viaje.destino }}</h3>
+      <p><strong>Fecha de Salida:</strong> {{ viaje.fechaSalida | date:'dd/MM/yyyy' }}</p>
+      <p><strong>Fecha de Regreso:</strong> {{ viaje.fechaRegreso | date:'dd/MM/yyyy' }}</p>
+      <div class="buttons">
+        <button class="btn-warning" (click)="editarViaje(i)">
+          <span class="icon">✏️</span>
+          Editar
+        </button>
+        <button class="btn-danger" (click)="eliminarViaje(i)">
+          <span class="icon">🗑️</span>
+          Eliminar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="viajes.length === 0" class="no-viajes">
+    <p>No tienes viajes guardados. ¡Crea uno nuevo!</p>
+  </div>
+</div> 

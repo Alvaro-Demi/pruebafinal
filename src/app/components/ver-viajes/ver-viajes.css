@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.viajes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.viaje-card {
+  background: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(30, 60, 114, 0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.viaje-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.viaje-card h3 {
+  color: #1e3c72;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  border-bottom: 2px solid #2a5298;
+  padding-bottom: 0.5rem;
+}
+
+.viaje-card p {
+  color: #555;
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.viaje-card p strong {
+  color: #1e3c72;
+  font-weight: 500;
+}
+
+.viaje-card .fecha {
+  color: #2a5298;
+  font-weight: 500;
+}
+
+.viaje-card .buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.viaje-card button {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.viaje-card .btn-warning {
+  background: linear-gradient(135deg, #f6b93b 0%, #f39c12 100%);
+  color: white;
+}
+
+.viaje-card .btn-warning:hover {
+  background: linear-gradient(135deg, #f39c12 0%, #f6b93b 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(243, 156, 18, 0.2);
+}
+
+.viaje-card .btn-danger {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+}
+
+.viaje-card .btn-danger:hover {
+  background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.2);
+}
+
+.icon {
+  font-size: 1.2rem;
+}
+
+.no-viajes {
+  text-align: center;
+  margin-top: 3rem;
+  color: #666;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .viajes-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .viaje-card {
+    padding: 1.2rem;
+  }
+
+  .viaje-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .viaje-card p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .viajes-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .viaje-card .buttons {
+    flex-direction: column;
+  }
+
+  .viaje-card button {
+    width: 100%;
+  }
+} 
